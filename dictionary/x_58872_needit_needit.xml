@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element audit="true" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element choice="1" label="Opened " max_length="60" name="new_1" type="string">
+            <choice>
+                <element label="Choice 1" sequence="0" value="Choice 1"/>
+                <element label="Choice 2" sequence="1" value="Choice 2"/>
+                <element label="Choice 3" sequence="2" value="Choice 3"/>
+            </choice>
+        </element>
+        <element default="40" label="Opened by" max_length="40" name="new_2" type="integer"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Additional comments" max_length="40" name="u_additional_comments" type="string"/>
+        <element attributes="omit_sys_original=true" default="0" label="Active" max_length="20" name="u_new_choice" type="currency"/>
+        <element label="Paid" mandatory="true" max_length="65536" name="u_paid" type="html"/>
+        <element default="true" label="Payment Done" max_length="40" name="u_payment_done" type="boolean"/>
+        <element label="Photo" max_length="100" name="u_photo" type="icon"/>
+        <element label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element label="Human Resources" sequence="0" value="hr"/>
+                <element label="Facilities" sequence="1" value="facilities"/>
+                <element label="Legal" sequence="2" value="  legal"/>
+                <element label="Your Department Choice" sequence="3" value="your_choice"/>
+            </choice>
+        </element>
+        <element attributes="omit_sys_original=true" label="Salary Trans" mandatory="true" max_length="20" name="u_salary_trans" type="currency"/>
+        <element attributes="edge_encryption_enabled=true" label="Description" max_length="255" name="u_string_full_utf8_1" type="string_full_utf8"/>
+        <element attributes="edge_encryption_enabled=true" label="Short description" max_length="255" name="u_string_full_utf8_2" type="string_full_utf8"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" default="13" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string">
+            <choice>
+                <element label="Requested" sequence="0" value="13"/>
+                <element label="Awaiting Approval" sequence="1" value="14"/>
+                <element label="Approved" sequence="2" value="15"/>
+                <element label="Awaiting Feedback" sequence="3" value="16"/>
+                <element label="Close Complete" sequence="4" value="   3"/>
+                <element label="Withdrawn" sequence="5" value="  8"/>
+            </choice>
+        </element>
+        <element label="When needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+        <element attributes="edge_encryption_enabled=true" label="Work notes" max_length="40" name="u_work_notes" type="string"/>
+        <index name="index">
+            <element name="u_requested_for"/>
+        </index>
+    </element>
+</database>
